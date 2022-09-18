@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.bahaa.marvelapp.view.home.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".view.home.HomeFragment">
+
+        <ImageView
+            android:id="@+id/image_logo"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/marvel_logo"
+            app:layout_constraintBottom_toTopOf="@+id/recycler_home"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/materialButton" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/materialButton"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_favorite"
+            app:iconTint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_home"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            app:isSuccess="@{viewModel.comics}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialButton" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_load"
+            style="@style/LottieStyle"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:foregroundGravity="center"
+            app:isLoading="@{viewModel.comics}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_rawRes="@raw/progress_indicators" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_error"
+            style="@style/LottieStyle"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:visibility="invisible"
+            app:isError="@{viewModel.comics}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_rawRes="@raw/error_404" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_reload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()-> viewModel.makeRequest()}"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/refresh"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:isError="@{viewModel.comics}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/lottie_error"
+            app:layout_constraintStart_toStartOf="@+id/lottie_error"
+            app:layout_constraintTop_toBottomOf="@+id/lottie_error"
+            app:layout_constraintVertical_bias="0.13999999" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

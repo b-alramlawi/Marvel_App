@@ -1,8 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.MarvelApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.MarvelApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/colorPrimaryLight</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -12,5 +12,31 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.marvel_splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@drawable/marvel_image</item>
+        <item name="postSplashScreenTheme">@style/Theme.MarvelApp</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">#7E7B7B</item>
+        <item name="colorControlActivated">#FFC107</item>
+    </style>
+
+    <!-- Lottie style -->
+    <style name="LottieStyle">
+        <item name="lottie_autoPlay">true</item>
+        <item name="lottie_loop">true</item>
+    </style>
+
+    <style name="ImageShape">
+        <item name="cornerSizeTopLeft">6%</item>
+        <item name="cornerSizeTopRight">6%</item>
+    </style>
+
+    <style name="LocalImageShape">
+        <item name="cornerSizeTopLeft">21%</item>
+        <item name="cornerSizeBottomLeft">21%</item>
     </style>
 </resources>

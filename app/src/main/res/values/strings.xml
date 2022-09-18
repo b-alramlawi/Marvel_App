@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Marvel App</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="see_all">See All</string>
+    <string name="comics">Comics</string>
+    <string name="refresh">Refresh</string>
+    <string name="modified">Modified : %s</string>
+    <string name="favorite">Favorite</string>
+    <string name="saved_message">"Saved this post"</string>
 </resources>

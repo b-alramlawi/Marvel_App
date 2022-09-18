@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/marvel_image"
+        android:padding="@dimen/large_padding">
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="92dp"
+            android:lineSpacingExtra="6dp"
+            android:text="Welcome to Marvel"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/large_text_size_22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:lineSpacingExtra="6dp"
+            android:text="The best to view and get to know Marvel characters app of the century to make your days great"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/medium_text_size_18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/play_again_button"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="60dp"
+            android:layout_marginStart="98dp"
+            android:layout_marginEnd="98dp"
+            android:layout_marginBottom="72dp"
+            android:background="@drawable/button_background"
+            android:text="Get Started"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/medium_text_size_18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.483"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/details"
+            app:layout_constraintVertical_bias="0.908" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
