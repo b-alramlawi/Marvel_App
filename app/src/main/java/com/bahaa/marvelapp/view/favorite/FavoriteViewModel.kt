@@ -32,7 +32,7 @@ class FavoriteViewModel : BaseViewModel(), FavoriteInteractionListener {
 
     private fun onGetPosts(favoritePost: List<FavoritePost>) {
         _favoriteFavoritePost.postValue(favoritePost)
-        this.favoritePost.value?.joinToString { it.name.toString() }?.let { Log.i("kkkkkkkkkkkk", it) }
+        this.favoritePost.value?.joinToString { it.name }?.let { Log.i("bha", it) }
 
     }
 
