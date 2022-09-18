@@ -14,12 +14,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
         android:background="@color/black">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_header_characters"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:adapter="@{adapter}"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"

@@ -16,26 +16,6 @@
         android:background="@color/black"
         tools:context=".view.home.HomeFragment">
 
-        <ImageView
-            android:id="@+id/image_logo"
-            android:layout_width="@dimen/_50sdp"
-            android:layout_height="30dp"
-            android:layout_marginStart="16dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/marvel_logo"
-            app:layout_constraintBottom_toTopOf="@+id/recycler_home"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/materialButton" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/materialButton"
-            style="@style/Widget.Material3.Button.IconButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_home"
             android:layout_width="match_parent"
@@ -47,8 +27,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/materialButton" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/lottie_load"
